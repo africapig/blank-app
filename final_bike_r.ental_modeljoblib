@@ -1,0 +1,12 @@
+{'model': Pipeline(steps=[('preprocess',
+                 ColumnTransformer(transformers=[('num', StandardScaler(),
+                                                  ['Temperature', 'Hour',
+                                                   'Humidity', 'Rainfall',
+                                                   'Visibility']),
+                                                 ('cat', 'passthrough',
+                                                  ['Seasons_Winter',
+                                                   'Seasons_Autumn'])])),
+                ('regressor',
+                 DecisionTreeRegressor(max_depth=30, min_samples_leaf=7,
+                                       min_samples_split=17,
+                                       random_state=42))]), 'best_params': {'regressor__splitter': 'best', 'regressor__min_samples_split': 17, 'regressor__min_samples_leaf': 7, 'regressor__max_leaf_nodes': None, 'regressor__max_features': None, 'regressor__max_depth': 30, 'regressor__criterion': 'squared_error'}, 'best_score': np.float64(0.8180809486487005), 'test_metrics': {'R2': 0.7568797226713895, 'Adjusted_R2': 0.7562075892032614, 'RMSE': np.float64(312.2409155925577), 'MAE': 187.0303149606299}, 'feature_columns': {'numerical': ['Temperature', 'Hour', 'Humidity', 'Rainfall', 'Visibility'], 'categorical': ['Seasons_Winter', 'Seasons_Autumn']}, 'training_date': '2025-09-01T13:21:47.107616', 'split_ratio': '70:30'}
